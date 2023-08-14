@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Rubik:ital,wght@0,500;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Rubik";
+  font-size: 15px;
+  font-weight: 400;
+  color: hsl(0, 0%, 17%);
+  overflow: hidden;
+}
+
+/* Search Bar */
+.search-bar {
+  background: url("./images/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 1.25rem;
+  position: relative;
+}
+
+h1 {
+  color: white;
+  font-weight: 400;
+}
+
+form {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4.5rem;
+}
+
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  min-width: 20rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  color: hsl(0, 0%, 17%);
+  font-weight: 500;
+}
+
+input[type="text"]::placeholder {
+  color: hsl(0, 0%, 59%);
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+#submit {
+  width: 2.5rem;
+  background-color: hsl(0, 0%, 17%);
+  border: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+#submit:hover {
+  background-color: hsl(0, 0%, 59%);
+}
+
+/* Results */
+.result {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  background-color: #fff;
+  padding: 1.5rem 0;
+  border-radius: 0.5rem;
+  text-align: left;
+  z-index: 5;
+}
+
+.result-item {
+  border-right: 1px solid hsl(0, 0%, 59%);
+  padding: 0 1.25rem;
+}
+
+.result-item:last-of-type {
+  border-right: none;
+}
+
+h2 {
+  font-size: 0.5rem;
+  letter-spacing: 0.1rem;
+  color: hsl(0, 0%, 59%);
+}
+
+.info {
+  font-size: 1.25rem;
+  color: hsl(0, 0%, 17%);
+  font-weight: 800;
+}
+
+/* Map */
+#map {
+  height: 455px;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+  }
+  form {
+    margin-bottom: 10rem;
+  }
+
+  .result {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    text-align: center;
+  }
+
+  .result-item {
+    padding: 0.5rem 3rem;
+    border-right: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .search-bar {
+    background: url("./images/pattern-bg-mobile.png");
+  }
+
+  input[type="text"] {
+    min-width: auto;
+  }
+}
